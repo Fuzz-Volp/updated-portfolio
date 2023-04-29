@@ -1,13 +1,10 @@
 import './Footer.css'
 
+const year = new Date().getFullYear()
+
 const Footer = () => (
   <footer className='footer'>
-    <a
-      href='https://github.com/rajshekhar26/cleanfolio'
-      className='link footer__link'
-    >
-      Created By Raj Shekhar
-    </a>
+    <> Copyright © {year}</>,
   </footer>
 )
 
