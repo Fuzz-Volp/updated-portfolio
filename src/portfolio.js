@@ -39,9 +39,9 @@ const projects = [
   {
     name: 'Andrew Thompson Art',
     description:
-      'This a Portfolio page for a friend of mine to also be able to sell his art, but also his ttrpg',
+      'This is my work in progress solution to some of the issues that I found with many of the TTRPG tools that I have used in the past. ',
     stack: ['Tailwind', 'TypeScript', 'React'],
-    sourceCode: 'https://github.com/Fuzz-Volp/andrew-portfolio',
+    sourceCode: 'https://github.com/Fuzz-Volp/Quill-and-Blade',
     livePreview: 'https://github.com',
   },
 ]
