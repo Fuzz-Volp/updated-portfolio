@@ -37,10 +37,10 @@ const projects = [
     livePreview: 'https://github.com',
   },
   {
-    name: 'Andrew Thompson Art',
+    name: 'Quill and Blade',
     description:
       'This is my work in progress solution to some of the issues that I found with many of the TTRPG tools that I have used in the past. ',
-    stack: ['Tailwind', 'TypeScript', 'React'],
+    stack: ['TypeScript', 'Tailwind', 'React'],
     sourceCode: 'https://github.com/Fuzz-Volp/Quill-and-Blade',
     livePreview: 'https://github.com',
   },
