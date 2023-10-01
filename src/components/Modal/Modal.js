@@ -1,3 +1,4 @@
+// Modal.js
 import React, { useState } from 'react'
 import ModalContent from '../ModalContent/ModalContent'
 
@@ -15,15 +16,12 @@ function Modal() {
           type='button'
           className='modal-button'
           style={{ cursor: 'pointer' }}
-          onClick={() => setShowModal(true)}
-          onKeyPress={() => setShowModal(true)}
+          onClick={toggleModal}
         >
           Contact Me
         </button>
       </header>
-      {showModal ? (
-        <ModalContent className='fade-up' toggleModal={toggleModal} />
-      ) : null}
+      {showModal ? <ModalContent toggleModal={toggleModal} /> : null}
     </div>
   )
 }

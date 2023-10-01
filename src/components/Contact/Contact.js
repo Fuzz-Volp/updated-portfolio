@@ -1,59 +1,45 @@
-import React, { useRef } from 'react'
+// Contact.js
+import React from 'react'
 import emailjs from '@emailjs/browser'
-// import { contact } from '../../portfolio'
 import './Contact.css'
 
-function Contact() {
-  const form = useRef()
-
+function Contact({ formRef, toggleModal }) {
   const sendEmail = (e) => {
     e.preventDefault()
     emailjs
       .sendForm(
         process.env.REACT_APP_SERVICE_ID,
         process.env.REACT_APP_TEMPLATE_ID,
-        form.current,
-        process.env.REACT_APP_PUBLIC_KEY
+        formRef.current,
+        'UyxyNcBs2GtSr-xZp'
       )
       .then(
         (result) => {
-          function customAlert() {
-            alert()
-          }
-          customAlert('message send successfully...')
-          console.log(result.text)
+          console.log('Email sent successfully:', result.text)
+          // You can add further actions here, such as showing a success message or closing the modal.
+          toggleModal() // Close the modal after sending the email.
         },
         (error) => {
-          console.log(error.text)
+          console.error('Email sending failed:', error.text)
+          // Handle errors, e.g., show an error message to the user.
         }
       )
   }
+
   return (
     <div>
-      <form className='cf' ref={form} onSubmit={sendEmail}>
+      <form className='cf' ref={formRef} onSubmit={sendEmail}>
         <div>
-          <input placeholder='Full Name' />
-          <input placeholder='Email' />
-          <input placeholder='Message' />
+          <input type='text' placeholder='Full Name' name='from_name' />
+          <input type='email' placeholder='Email' name='from_email' />
+          <textarea placeholder='Message' name='message' />
         </div>
+        <button type='submit' value='Send'>
+          Send
+        </button>
       </form>
     </div>
   )
 }
-
-// const Contact = () => {
-//   if (!contact.email) return null
-
-//   return (
-//     <section className='section contact center' id='contact'>
-//       <h2 className='section__title'>Contact</h2>
-//       <a href={`mailto:${contact.email}`}>
-//         <span type='button' className='btn btn--outline'>
-//           Email me
-//         </span>
-//       </a>
-//     </section>
-//   )
-// }
 
 export default Contact
